@@ -14,11 +14,11 @@ const Auth = () => {
         console.log(event.target.name);
     }
     const onSubmit = (event) => {
-        event.preventDefault();
+        event.preventDefault(); // default event 실행막음. 내가 처리할거야
     }
     return (<div>
         <form onSunmit={onSubmit}>
-            <input name="email" type="text" placeholder="Email" required value={email}
+            <input name="email" type="email" placeholder="Email" required value={email}
             onChange={onChange}/>
             <input
                 name="password"
