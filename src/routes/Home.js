@@ -43,12 +43,12 @@ const Home = ({userObj}) => {
         setNweet(value);
     }
     return (
-        <div>
-            <form onSubmit={onSubmit}>
-                <input value={nweet} onChange={onChange} type="text" placeholder="What's on your mind?" maxLength={120} />
-                <input type="submit" value="Twitter"/>
+        <div className="nweet">
+            <form onSubmit={onSubmit} className="container nweetEdit">
+                <input value={nweet} onChange={onChange} type="text" placeholder="What's on your mind?" maxLength={120} className="formInput"/>
+                <input type="submit" value="Twitter" className="formBtn"/>
             </form>
-            <div>
+            <div style={{marginTop:30}}>
                 {nweets.map((nweet) => (
                 <div key={nweet.id}>
                     <h4>{nweet.text}</h4>

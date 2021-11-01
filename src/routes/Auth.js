@@ -2,6 +2,12 @@
 import React, {useState} from "react";
 import { authService, firebaseInstance } from "../fbase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider, signInWithPopup } from 'firebase/auth';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faTwitter,
+    faGoogle,
+    faGithub
+} from "@fortawesome/free-brands-svg-icons";
 
 const Auth = () => {
     const [email, setEmail] = useState("");
@@ -62,7 +68,13 @@ const onSocialClick = async(event) => {
     console.log(data);
 };
 
-    return (<div>
+    return (<div calssName="container">
+        <FontAwesomeIcon
+            icon={faTwitter}
+            color={"#04AAFF"}
+            size="3x"
+            style={{marginBottom:30}}
+        />
         <form onSubmit={onSubmit}>
             <input name="email" type="text" placeholder="Email" required value={email}
             onChange={onChange}/>
